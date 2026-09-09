@@ -9,7 +9,7 @@ Run locally:
     streamlit run streamlit_app.py
 
 Configure the backend URL via `.streamlit/secrets.toml`:
-    API_BASE_URL = "http://localhost:8000/api/v1"
+    API_BASE_URL = "https://voice-changer-3sw8.onrender.com"
 or the environment variable API_BASE_URL (used as a fallback).
 """
 import os
@@ -29,7 +29,7 @@ def _resolve_api_base_url() -> str:
             return st.secrets["API_BASE_URL"]
     except Exception:
         pass
-    return os.environ.get("API_BASE_URL", "http://localhost:8000/api/v1")
+    return os.environ.get("API_BASE_URL", "https://voice-changer-3sw8.onrender.com/api/v1")
 
 
 API_BASE_URL = _resolve_api_base_url()
